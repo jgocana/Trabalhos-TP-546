@@ -8,12 +8,12 @@ Este trabalho é desenvolvido no contexto da disciplina **Internet das Coisas e 
 
 ## Autores
 
-**José Antonio García Ocaña**
-Matrícula: 979
+**José Antonio García Ocaña**  
+Matrícula: 979  
 Instituto Nacional de Telecomunicações — Inatel
 
-**Yaislin Bell Verdecia**
-Matrícula: 1005
+**Yaislin Bell Verdecia**  
+Matrícula: 1005  
 Instituto Nacional de Telecomunicações — Inatel
 
 Santa Rita do Sapucaí, MG, Brasil.
