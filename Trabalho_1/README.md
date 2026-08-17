@@ -6,6 +6,18 @@
 
 Este trabalho é desenvolvido no contexto da disciplina **Internet das Coisas e Redes Veiculares (TP-546)** do Instituto Nacional de Telecomunicações — Inatel.
 
+## Autores
+
+**José Antonio García Ocaña**
+Matrícula: 979
+Instituto Nacional de Telecomunicações — Inatel
+
+**Yaislin Bell Verdecia**
+Matrícula: 1005
+Instituto Nacional de Telecomunicações — Inatel
+
+Santa Rita do Sapucaí, MG, Brasil.
+
 ## Objetivo
 
 O objetivo do trabalho é estudar a utilização de **Redes de Sensores Sem Fio (RSSF/WSN)** em sistemas de agricultura de precisão, com foco no **monitoramento distribuído da umidade do solo**.
@@ -148,15 +160,3 @@ Os artigos utilizados no desenvolvimento do trabalho também estão armazenados 
    * [MDPI Sensors](https://www.mdpi.com/1424-8220/22/9/3273)
    * [DOI](https://doi.org/10.3390/s22093273)
    * [PDF no repositório](./referencias/09_Bayih_2022_IoT_WSN_Smallholder_Agriculture.pdf)
-
-## Autores
-
-**José Antonio García Ocaña**
-Matrícula: 979
-Instituto Nacional de Telecomunicações — Inatel
-
-**Yaislin Bell Verdecia**
-Matrícula: 1005
-Instituto Nacional de Telecomunicações — Inatel
-
-Santa Rita do Sapucaí, MG, Brasil.
