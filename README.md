@@ -36,7 +36,7 @@ Trabalhos-TP-546/
 
 | Trabalho | Tema | Status | Documentação |
 | --- | --- | --- | --- |
-| **Trabalho 1** | Redes de Sensores Sem Fio aplicadas à Agricultura de Precisão | Em desenvolvimento | [Acessar Trabalho 1](./Trabalho_1/README.md) |
+| **Trabalho 1** | Redes de Sensores Sem Fio aplicadas à Agricultura de Precisão | Concluído | [Acessar Trabalho 1](./Trabalho_1/README.md) |
 | **Trabalho 2** | Agricultura Inteligente na Prática: estudo de caso do Solix Sprayer na Tereos | Concluído | [Acessar Trabalho 2](./Trabalho_2/README.md) |
 
 ## Trabalho 1 — Redes de Sensores Sem Fio
@@ -45,7 +45,7 @@ O primeiro trabalho aborda a aplicação de **Redes de Sensores Sem Fio no monit
 
 O estudo inclui conceitos de agricultura de precisão, RSSF/WSN, sensores de umidade do solo, LoRa/LoRaWAN, gateways, integração com plataformas IoT e desafios relacionados a energia, cobertura, calibração e custos.
 
-### Links
+### Links ao Trabalho 1
 
 * [Documentação completa do Trabalho 1](./Trabalho_1/README.md)
 * [Relatório do Trabalho 1](./Trabalho_1/documento/Trabalho_1_RSSF_Agricultura_Precisao.pdf)
@@ -56,7 +56,7 @@ O segundo trabalho apresenta um **estudo de caso de uma aplicação real de IoT 
 
 O estudo aborda agricultura inteligente, robótica agrícola, visão computacional, inteligência artificial, posicionamento GNSS/RTK, pulverização seletiva, conectividade, resultados da implantação, benefícios e limitações.
 
-### Links
+### Links ao Trabalho 2
 
 * [Documentação completa do Trabalho 2](./Trabalho_2/README.md)
 * [Relatório do Trabalho 2](./Trabalho_2/documento/Trabalho_2_Agricultura_Inteligente_Solix_Tereos.pdf)
