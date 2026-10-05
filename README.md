@@ -39,7 +39,7 @@ Trabalhos-TP-546/
 | --- | --- | --- | --- |
 | **Trabalho 1** | Redes de Sensores Sem Fio aplicadas à Agricultura de Precisão | Concluído | [Acessar Trabalho 1](./Trabalho_1/README.md) |
 | **Trabalho 2** | Agricultura Inteligente na Prática: estudo de caso do Solix Sprayer na Tereos | Concluído | [Acessar Trabalho 2](./Trabalho_2/README.md) |
-| **Trabalho 3** | Segurança de beacons LoRaWAN Class B em cenários DtS-IoT: spoofing e mitigação | Versão em revisão | [Acessar Trabalho 3](./Trabalho_3/README.md) |
+| **Trabalho 3** | Segurança de beacons LoRaWAN Class B em cenários DtS-IoT: spoofing e mitigação | Concluído | [Acessar Trabalho 3](./Trabalho_3/README.md) |
 
 ## Trabalho 1 — Redes de Sensores Sem Fio
 
