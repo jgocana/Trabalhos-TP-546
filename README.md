@@ -34,22 +34,11 @@ Trabalhos-TP-546/
 └── Trabalho_IoT/
     ├── README.md
     ├── aplicativo/
-    │   └── br.inatel.mtel.leakguardiot-v1.0.0-release.apk
     ├── documento/
-    │   └── LeakGuard  Apresentação do Projeto IoT com ESP32, MQTT e Android.pdf
     ├── presentacão/
-    │   └── LeakGuard_IoT.pptx
     └── projetos/
         ├── Android/
-        │   └── LeakGuard_Iot-master.zip
         └── IoT/
-            └── trabalho_Iot/
-                ├── platformio.ini
-                ├── include/
-                ├── lib/
-                ├── src/
-                │   └── main.cpp
-                └── test/
 ```
 
 ## Trabalhos
