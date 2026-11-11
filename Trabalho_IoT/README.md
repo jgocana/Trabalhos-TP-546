@@ -117,10 +117,8 @@ O broker público **`broker.emqx.io`** é utilizado para fins de demonstração 
 
 ### Vídeos
 
-A apresentação acadêmica e a demonstração prática foram preparadas como materiais complementares. Os respectivos links do YouTube devem ser adicionados aqui após a publicação:
-
-- **Apresentação do projeto:** link não informado neste repositório.
-- **Demonstração prática:** link não informado neste repositório.
+- **Apresentação do projeto LeakGuard:** [Assistir no YouTube](https://youtu.be/vbGF-0o2YHY).
+- **Demonstração prática do experimento com ESP32, sensor de água, MQTT e Android:** [Assistir ao YouTube Short](https://www.youtube.com/shorts/WqVsKRFApew).
 
 ## Execução e reprodução
 
