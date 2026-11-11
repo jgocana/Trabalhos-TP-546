@@ -14,7 +14,7 @@ Santa Rita do Sapucaí, MG, Brasil
 
 ## Organização do repositório
 
-Cada trabalho possui uma pasta própria com `README.md` e os materiais correspondentes. Os três primeiros trabalhos reúnem artigos e referências em `documento/` e `referencias/`; o **Trabalho IoT** contém firmware, aplicativo Android, apresentação e documentos do protótipo. Quando há referências em PDF, seus nomes numerados facilitam a identificação no artigo correspondente.
+Cada trabalho possui sua própria pasta e um `README.md` específico. Os Trabalhos 1, 2 e 3 concentram seus relatórios em `documento/` e as fontes utilizadas em `referencias/`. O **Trabalho IoT — LeakGuard** reúne os materiais da implementação prática: aplicativo Android, documento de apresentação, PowerPoint e projetos de software embarcado e móvel.
 
 ```text
 Trabalhos-TP-546/
@@ -27,10 +27,29 @@ Trabalhos-TP-546/
 │   ├── README.md
 │   ├── documento/
 │   └── referencias/
-└── Trabalho_3/
+├── Trabalho_3/
+│   ├── README.md
+│   ├── documento/
+│   └── referencias/
+└── Trabalho_IoT/
     ├── README.md
+    ├── aplicativo/
+    │   └── br.inatel.mtel.leakguardiot-v1.0.0-release.apk
     ├── documento/
-    └── referencias/
+    │   └── LeakGuard  Apresentação do Projeto IoT com ESP32, MQTT e Android.pdf
+    ├── presentacão/
+    │   └── LeakGuard_IoT.pptx
+    └── projetos/
+        ├── Android/
+        │   └── LeakGuard_Iot-master.zip
+        └── IoT/
+            └── trabalho_Iot/
+                ├── platformio.ini
+                ├── include/
+                ├── lib/
+                ├── src/
+                │   └── main.cpp
+                └── test/
 ```
 
 ## Trabalhos
@@ -71,13 +90,16 @@ O estudo também contextualiza o emprego de beacons como indicadores de cobertur
 
 ## Trabalho IoT — LeakGuard
 
-O **LeakGuard** é uma implementação prática de detecção localizada de presença de água que integra o microcontrolador **ESP32**, sensor Grove Water Sensor V1.1, alarme acústico e comunicação **MQTT** com o broker EMQX.
+O **LeakGuard** é uma implementação prática de um sistema IoT para detecção localizada de presença de água, com atuação acústica por **ESP32**, transmissão de dados via **MQTT** e supervisão remota por **MQTTX Web** e aplicativo **Android**.
 
-A solução oferece monitoramento por **MQTTX Web** e por aplicativo Android nativo, com dashboard, controle remoto do alarme e histórico persistente de incidentes. A pasta reúne o firmware em PlatformIO, a APK, o projeto Android, a apresentação PowerPoint e o documento de apoio.
+O nó embarcado utiliza o sensor **Grove Water Sensor V1.1** e o atuador **Grove Buzzer V1.2** para reconhecer a presença de água e emitir alertas locais. A arquitetura contempla monitoramento, comandos remotos, registro de incidentes e histórico persistente, com armazenamento no ESP32 e no aplicativo. Os materiais disponíveis incluem código-fonte do firmware em PlatformIO, projeto Android, APK de instalação, apresentação editável e documento de apoio.
 
 - [Documentação completa do Trabalho IoT](./Trabalho_IoT/README.md)
-- [Apresentação em PowerPoint](./Trabalho_IoT/presentac%C3%A3o/LeakGuard_IoT.pptx)
+- [Documento de apresentação (PDF)](./Trabalho_IoT/documento/LeakGuard%20%20Apresenta%C3%A7%C3%A3o%20do%20Projeto%20IoT%20com%20ESP32%2C%20MQTT%20e%20Android.pdf)
+- [Apresentação em PowerPoint (PPTX)](./Trabalho_IoT/presentac%C3%A3o/LeakGuard_IoT.pptx)
 - [Aplicativo Android — APK](./Trabalho_IoT/aplicativo/br.inatel.mtel.leakguardiot-v1.0.0-release.apk)
+- [Projeto Android (ZIP)](./Trabalho_IoT/projetos/Android/LeakGuard_Iot-master.zip)
+- [Projeto ESP32 / PlatformIO](./Trabalho_IoT/projetos/IoT/trabalho_Iot/)
 
 ## Licença e uso
 
