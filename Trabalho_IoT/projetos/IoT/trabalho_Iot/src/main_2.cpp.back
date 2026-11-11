@@ -1,0 +1,205 @@
+
+#include <Arduino.h>
+#include <WiFi.h>
+#include <PubSubClient.h>
+
+// Pines
+#define WATER_PIN 34
+#define BUZZER_PIN 23
+
+// Wi-Fi: cambiar estos valores
+const char *WIFI_SSID = "WLL-Inatel";
+const char *WIFI_PASS = "inatelsemfio";
+
+// MQTT
+const char *MQTT_SERVER = "broker.emqx.io";
+const int MQTT_PORT = 1883;
+
+// Cambia demo4821 por un identificador propio
+const char *TOPIC_STATE = "leakguard/demo4821/state";
+const char *TOPIC_CMD = "leakguard/demo4821/cmd";
+
+WiFiClient espClient;
+PubSubClient mqtt(espClient);
+
+bool waterDetected = false;
+bool muted = false;
+
+unsigned long lastPublish = 0;
+unsigned long lastMqttAttempt = 0;
+
+void updateBuzzer()
+{
+  // Ritmo original estilo conga santiaguera
+  static const int notas[] = {
+      784, 0, 784, 988,
+      0, 880, 784, 0,
+      1047, 988, 784, 0,
+      880, 784, 0, 0};
+
+  static const int tiempos[] = {
+      130, 70, 130, 180,
+      80, 130, 180, 80,
+      150, 130, 200, 70,
+      130, 260, 150, 250};
+
+  static int paso = 0;
+  static unsigned long ultimoCambio = 0;
+  static bool activoAntes = false;
+
+  bool activo = waterDetected && !muted;
+
+  if (!activo)
+  {
+    noTone(BUZZER_PIN);
+    paso = 0;
+    activoAntes = false;
+    return;
+  }
+
+  if (!activoAntes)
+  {
+    activoAntes = true;
+    ultimoCambio = millis();
+    tone(BUZZER_PIN, notas[0]);
+    return;
+  }
+
+  if (millis() - ultimoCambio >= tiempos[paso])
+  {
+    ultimoCambio = millis();
+    paso = (paso + 1) % 16;
+
+    if (notas[paso] == 0)
+      noTone(BUZZER_PIN);
+    else
+      tone(BUZZER_PIN, notas[paso]);
+  }
+}
+
+void publishState()
+{
+  if (!mqtt.connected())
+    return;
+
+  String message = "{";
+  message += "\"water_detected\":";
+  message += waterDetected ? "true" : "false";
+  message += ",\"buzzer\":";
+  message += (waterDetected && !muted) ? "true" : "false";
+  message += ",\"muted\":";
+  message += muted ? "true" : "false";
+  message += "}";
+
+  mqtt.publish(TOPIC_STATE, message.c_str(), true);
+  Serial.println(message);
+}
+
+void mqttCallback(char *topic, byte *payload,
+                  unsigned int length)
+{
+  String command = "";
+
+  for (unsigned int i = 0; i < length; i++)
+  {
+    command += (char)payload[i];
+  }
+
+  command.trim();
+  command.toUpperCase();
+
+  if (command == "SILENCE")
+  {
+    muted = true;
+  }
+  else if (command == "UNMUTE")
+  {
+    muted = false;
+  }
+
+  updateBuzzer();
+  publishState();
+}
+
+void connectMQTT()
+{
+  String clientId = "LeakGuard-";
+  clientId += WiFi.macAddress();
+  clientId.replace(":", "");
+
+  Serial.println("Conectando MQTT...");
+
+  if (mqtt.connect(clientId.c_str()))
+  {
+    Serial.println("MQTT conectado!");
+    mqtt.subscribe(TOPIC_CMD);
+    publishState();
+  }
+  else
+  {
+    Serial.print("Error MQTT: ");
+    Serial.println(mqtt.state());
+  }
+}
+
+void setup()
+{
+  Serial.begin(115200);
+
+  pinMode(WATER_PIN, INPUT);
+  pinMode(BUZZER_PIN, OUTPUT);
+
+  waterDetected = (digitalRead(WATER_PIN) == LOW);
+  updateBuzzer();
+
+  WiFi.mode(WIFI_STA);
+  WiFi.setAutoReconnect(true);
+  WiFi.begin(WIFI_SSID, WIFI_PASS);
+
+  mqtt.setServer(MQTT_SERVER, MQTT_PORT);
+  mqtt.setCallback(mqttCallback);
+
+  Serial.println("LeakGuard iniciado");
+}
+
+void loop()
+{
+  bool current = (digitalRead(WATER_PIN) == LOW);
+
+  if (current != waterDetected)
+  {
+    waterDetected = current;
+
+    if (!waterDetected)
+    {
+      muted = false;
+    }
+
+    publishState();
+  }
+
+  // La alarma local funciona sin MQTT.
+  if (WiFi.status() == WL_CONNECTED)
+  {
+    if (!mqtt.connected())
+    {
+      if (millis() - lastMqttAttempt >= 5000)
+      {
+        lastMqttAttempt = millis();
+        connectMQTT();
+      }
+    }
+    else
+    {
+      mqtt.loop();
+
+      if (millis() - lastPublish >= 2000)
+      {
+        lastPublish = millis();
+        publishState();
+      }
+    }
+  }
+  updateBuzzer();
+  delay(50);
+}
