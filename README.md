@@ -100,6 +100,8 @@ O nó embarcado utiliza o sensor **Grove Water Sensor V1.1** e o atuador **Grove
 - [Aplicativo Android — APK](./Trabalho_IoT/aplicativo/br.inatel.mtel.leakguardiot-v1.0.0-release.apk)
 - [Projeto Android (ZIP)](./Trabalho_IoT/projetos/Android/LeakGuard_Iot-master.zip)
 - [Projeto ESP32 / PlatformIO](./Trabalho_IoT/projetos/IoT/trabalho_Iot/)
+- [Vídeo de apresentação do LeakGuard (YouTube)](https://youtu.be/vbGF-0o2YHY)
+- [Vídeo de demonstração prática do experimento (YouTube Shorts)](https://www.youtube.com/shorts/WqVsKRFApew)
 
 ## Licença e uso
 
