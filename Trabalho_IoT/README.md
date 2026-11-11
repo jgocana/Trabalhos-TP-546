@@ -10,7 +10,7 @@ Este trabalho foi desenvolvido na disciplina **Internet das Coisas e Redes Veicu
 
 **José Antonio García Ocaña** — Matrícula 979 — [ORCID: 0000-0003-0816-8353](https://orcid.org/0000-0003-0816-8353)  
 **Yaislin Bell Verdecia** — Matrícula 1005 — [ORCID: 0009-0000-7328-7864](https://orcid.org/0009-0000-7328-7864)  
-**Martin Alonso Siffrin** — Matrícula 999
+**Martin Alonso Siffrin** — Matrícula 999 — [ORCID: 0009-0004-2686-2693](https://orcid.org/0009-0004-2686-2693)
 
 Instituto Nacional de Telecomunicações — Inatel  
 Santa Rita do Sapucaí, MG, Brasil.
